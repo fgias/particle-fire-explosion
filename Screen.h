@@ -19,6 +19,8 @@ private:
 public:
     Screen();
     bool init();
+    void update();
+    void setPixel(int x, int y, Uint8 red, Uint8 green, Uint8 blue); // Uint8: SDL type: unsigned 8-bit int (unsigned char)
     bool processEvents();
     void close();    
 };
