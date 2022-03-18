@@ -25,12 +25,11 @@ int main() {
 
         int elapsed = SDL_GetTicks();
 
-        screen.clear();
         swarm.update(elapsed);
 
-        unsigned char red = (1 + sin(elapsed * 0.01)) * 128; 
-        unsigned char green = (1 + sin(elapsed * 0.02)) * 128; 
-        unsigned char blue = (1 + sin(elapsed * 0.03)) * 128; 
+        unsigned char red = (1 + sin(elapsed * 0.0001)) * 128; 
+        unsigned char green = (1 + sin(elapsed * 0.0002)) * 128; 
+        unsigned char blue = (1 + sin(elapsed * 0.0003)) * 128; 
 
         const Particle * const pParticles = swarm.getParticles();
 
@@ -43,6 +42,8 @@ int main() {
             screen.setPixel(x, y, red, green, blue);
         }
         
+        screen.boxBlur(); 
+
         // update screen
         screen.update();
 
