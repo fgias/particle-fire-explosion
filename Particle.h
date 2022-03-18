@@ -9,8 +9,8 @@ struct Particle {
     double m_x; // these are public
     double m_y;
 
-    double m_xspeed;
-    double m_yspeed;
+    double m_speed;
+    double m_direction;
 public:
     Particle();
     void update();
