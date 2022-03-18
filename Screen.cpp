@@ -101,5 +101,9 @@ void Screen::close() {
     SDL_DestroyWindow(m_window);
     SDL_Quit();  
 }
+
+void Screen::clear() {
+    memset(m_buffer, 0, SCREEN_WIDTH*SCREEN_HEIGHT*sizeof(Uint32));
+}
     
 }
