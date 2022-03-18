@@ -10,11 +10,12 @@ public:
     static const int N_PARTICLES = 5000;
 private:
     Particle* m_pParticles; // const pointer to a particle
+    int lastTime;
 public:
     Swarm();
     virtual ~Swarm();
     const Particle* const getParticles() {return m_pParticles;};
-    void update();
+    void update(int elapsed);
 };
 
 }

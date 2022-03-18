@@ -13,7 +13,7 @@ struct Particle {
     double m_direction;
 public:
     Particle();
-    void update();
+    void update(int interval);
 };
 
 }
