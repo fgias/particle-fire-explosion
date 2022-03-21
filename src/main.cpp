@@ -64,8 +64,14 @@ int main() {
 to run:
 
 clear;
-g++ main.cpp Screen.cpp Particle.cpp Swarm.cpp -Wall -g -c -I /opt/local/include/SDL2 -D_THREAD_SAFE; 
-g++ main.o Screen.o Particle.o Swarm.o -o exec -lm -L /opt/local/lib -lSDL2;
-./exec
+
+g++ ./src/main.cpp -Wall -g -c -I /opt/local/include/SDL2 -I ./include -D_THREAD_SAFE -o ./build/main.o;
+g++ ./src/Screen.cpp -Wall -g -c -I /opt/local/include/SDL2 -I ./include -D_THREAD_SAFE -o ./build/Screen.o; 
+g++ ./src/Particle.cpp -Wall -g -c -I /opt/local/include/SDL2 -I ./include -D_THREAD_SAFE -o ./build/Particle.o; 
+g++ ./src/Swarm.cpp -Wall -g -c -I /opt/local/include/SDL2 -I ./include -D_THREAD_SAFE -o ./build/Swarm.o; 
+
+g++ ./build/main.o ./build/Screen.o ./build/Particle.o ./build/Swarm.o -o ./bin/exec -lm -L /opt/local/lib -lSDL2;
+
+./bin/exec
 
 */
