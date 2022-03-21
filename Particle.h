@@ -21,8 +21,6 @@ public:
     void update();
 };
 
-const double R = ((double)Particle::RADIUS)/Screen::SCREEN_WIDTH;
-
 }
 
 #endif

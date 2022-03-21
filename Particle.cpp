@@ -14,6 +14,7 @@ Particle::Particle() {
 void Particle::update() {
     m_x += m_xspeed;
     m_y += m_yspeed;
+    double R = ((double)Particle::RADIUS)/Screen::SCREEN_WIDTH;
 
     if (m_x < -1.0 + R || m_x >= 1.0 - R) {
         m_xspeed = -m_xspeed;

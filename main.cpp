@@ -36,7 +36,7 @@ int main() {
 
         for (int i=0; i<Swarm::N_PARTICLES; i++) {
             Particle particle = pParticles[i];
-
+            double R = ((double)Particle::RADIUS)/Screen::SCREEN_WIDTH;
             for (int row=-Particle::RADIUS; row<=Particle::RADIUS; row++) {
                 for (int col=-Particle::RADIUS; col<=Particle::RADIUS; col++) {
                     double x0 = particle.m_x;
@@ -45,7 +45,7 @@ int main() {
                     double currY = y0 + ((double)col)/Screen::SCREEN_HEIGHT;
 
                     if ((currX-x0)*(currX-x0) + (currY-y0)*(currY-y0)
-                        < R * R) {
+                        < (R * R)) {
                             int x = (currX + 1) * 1/2 * Screen::SCREEN_WIDTH;
                             int y = (currY) * 1/2 * Screen::SCREEN_WIDTH + Screen::SCREEN_HEIGHT/2;
                             screen.setPixel(x, y, red, green, blue);
