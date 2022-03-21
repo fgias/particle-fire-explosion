@@ -1,3 +1,4 @@
+#include <iostream>
 #include <stdlib.h>
 #include "Screen.h"
 # include "Swarm.h"
@@ -95,7 +96,15 @@ bool Screen::processEvents() {
 
         if (event.type == SDL_MOUSEBUTTONDOWN) {
             int particle = ((double)rand())/RAND_MAX * Swarm::N_PARTICLES;
-            (m_screen_particles[particle]).init();
+
+            double w = (double)Screen::SCREEN_WIDTH;
+            double h = (double)Screen::SCREEN_HEIGHT;
+            double xMouse = (double)event.motion.x;
+            double yMouse = (double)event.motion.y;
+
+            double Xcoord = ((double)xMouse)/w * 2 - 1.0;
+            double Ycoord = ((double)yMouse)/h * 2 - 1.0;
+            (m_screen_particles[particle]).init(Xcoord, Ycoord);
         };
     };
     return true;

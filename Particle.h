@@ -18,6 +18,7 @@ public:
     Particle();
     void update();
     void init();
+    void init(double x, double y);
 };
 
 }

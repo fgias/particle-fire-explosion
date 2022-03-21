@@ -44,11 +44,12 @@ int main() {
                     double y0 = particle.m_y;
                     double currX = x0 + ((double)row)/Screen::SCREEN_WIDTH;
                     double currY = y0 + ((double)col)/Screen::SCREEN_HEIGHT;
+                    double ratio = ((double)Screen::SCREEN_HEIGHT)/Screen::SCREEN_WIDTH;
 
-                    if ((currX-x0)*(currX-x0) + (currY-y0)*(currY-y0)
+                    if ((currX-x0)*(currX-x0) + ratio * ratio * (currY-y0)*(currY-y0)
                         < (R * R)) {
                             int x = (currX + 1) * 1/2 * Screen::SCREEN_WIDTH;
-                            int y = (currY) * 1/2 * Screen::SCREEN_WIDTH + Screen::SCREEN_HEIGHT/2;
+                            int y = (currY + 1) * 1/2 * Screen::SCREEN_HEIGHT;
                             screen.setPixel(x, y, red, green, blue);
                     };
 

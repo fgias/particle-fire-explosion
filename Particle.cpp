@@ -16,19 +16,25 @@ void Particle::init() {
     m_yspeed = (2.0 * rand()/RAND_MAX - 1) * 0.01;
 }
 
+void Particle::init(double x, double y) {
+    m_x = x;
+    m_y = y;
+
+    m_xspeed = (2.0 * rand()/RAND_MAX - 1) * 0.01;
+    m_yspeed = (2.0 * rand()/RAND_MAX - 1) * 0.01;
+}
+
 void Particle::update() {
     m_x += m_xspeed;
     m_y += m_yspeed;
     double R = ((double)Particle::RADIUS)/Screen::SCREEN_WIDTH;
+    double ratio = ((double)Screen::SCREEN_HEIGHT)/Screen::SCREEN_WIDTH;
 
     if (m_x < -1.0 + R || m_x >= 1.0 - R) {
         m_xspeed = -m_xspeed;
     }
-
-    double offset = ((double)Screen::SCREEN_WIDTH)/Screen::SCREEN_HEIGHT;
-    offset = (((double)Screen::SCREEN_WIDTH) - (double)Screen::SCREEN_HEIGHT)/Screen::SCREEN_WIDTH;
     
-    if (m_y < -1.0 + R + offset || m_y >= 1.0 - R - offset) {
+    if (m_y < -1.0 + R/ratio || m_y >= 1.0 - R/ratio) {
         m_yspeed = -m_yspeed;
     }
 
