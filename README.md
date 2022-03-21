@@ -1,6 +1,8 @@
 # particle-fire-explosion
 Particle fire explosion animation in C++ using SDL2.
 
-<img width="800" alt="Screen Shot 2022-03-21 at 6 51 19 PM" src="https://user-images.githubusercontent.com/62244020/159316281-d499d998-6adf-419a-9a07-cd067a994454.png"><img width="800" alt="Screen Shot 2022-03-21 at 6 51 35 PM" src="https://user-images.githubusercontent.com/62244020/159316468-7a3ccccf-f1d7-48c4-a157-f5c331bcd74a.png">
+<img width="800" alt="Screen Shot 2022-03-21 at 7 00 59 PM" src="https://user-images.githubusercontent.com/62244020/159324817-49d858ab-6579-4db3-8e1e-b7ebdbe310e5.png">
+<img width="800" alt="Screen Shot 2022-03-21 at 7 01 18 PM" src="https://user-images.githubusercontent.com/62244020/159324979-6899f716-8d35-49f0-a63f-2433e07db67b.png">
+
 
 See the "C++ Tutorial for Complete Beginners" Udemy course.
