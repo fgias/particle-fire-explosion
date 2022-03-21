@@ -32,9 +32,10 @@ int main() {
         unsigned char green = (1 + sin(elapsed * 0.0002)) * 128; 
         unsigned char blue = (1 + sin(elapsed * 0.0003)) * 128; 
 
-        const Particle * const pParticles = swarm.getParticles();
+        Particle * pParticles = swarm.getParticles();
+        screen.m_screen_particles = pParticles;
 
-        for (int i=0; i<Swarm::N_PARTICLES; i++) {
+        for (int i=0; i<10; i++) {
             Particle particle = pParticles[i];
             double R = ((double)Particle::RADIUS)/Screen::SCREEN_WIDTH;
             for (int row=-Particle::RADIUS; row<=Particle::RADIUS; row++) {

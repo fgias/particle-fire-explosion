@@ -1,8 +1,6 @@
 #ifndef PARTICLE_H_
 #define PARTICLE_H_
 
-#include "Screen.h"
-
 namespace fgias {
 
 // the only difference between class and struct: 
@@ -19,6 +17,7 @@ struct Particle {
 public:
     Particle();
     void update();
+    void init();
 };
 
 }

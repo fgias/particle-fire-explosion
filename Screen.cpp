@@ -3,7 +3,7 @@
 namespace fgias {
 
 Screen::Screen(): 
-    m_window(NULL), m_renderer(NULL), m_texture(NULL), m_buffer(NULL) {
+    m_screen_particles(NULL), m_window(NULL), m_renderer(NULL), m_texture(NULL), m_buffer(NULL) {
 }
 
 bool Screen::init() {
@@ -89,6 +89,10 @@ bool Screen::processEvents() {
     while (SDL_PollEvent(&event)) {
         if (event.type == SDL_QUIT) {
             return false;
+        };
+
+        if (event.type == SDL_MOUSEBUTTONDOWN) {
+            (m_screen_particles[5]).init();
         };
     };
     return true;

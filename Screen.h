@@ -2,6 +2,7 @@
 #define SCREEN_H_
 
 #include <SDL.h>
+#include "Particle.h"
 
 namespace fgias {
 
@@ -9,7 +10,7 @@ class Screen {
 public:
     static const int SCREEN_WIDTH = 1200;
     static const int SCREEN_HEIGHT = 600;
-
+    Particle* m_screen_particles;
 private:
     SDL_Window * m_window; // convention: member variables: prefix with `m_`
     SDL_Renderer * m_renderer;

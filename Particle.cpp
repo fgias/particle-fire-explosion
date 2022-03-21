@@ -1,9 +1,14 @@
 #include <stdlib.h>
 #include "Particle.h"
+#include "Screen.h"
 
 namespace fgias {
 
 Particle::Particle() {
+    init();
+}
+
+void Particle::init() {
     m_x = 0;
     m_y = 0;
 
