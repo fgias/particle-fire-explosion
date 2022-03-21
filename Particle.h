@@ -7,7 +7,7 @@ namespace fgias {
 // instance vairables are public by default
 struct Particle { 
 
-    static const double RADIUS = 50;
+    static const int RADIUS = 50;
 
     double m_x; // these are public
     double m_y;
