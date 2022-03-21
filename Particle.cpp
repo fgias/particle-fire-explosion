@@ -15,10 +15,14 @@ void Particle::update() {
     m_x += m_xspeed;
     m_y += m_yspeed;
 
-    if (m_x < -1.0 || m_x >= 1.0) {
+    if (m_x < -1.0 + R || m_x >= 1.0 - R) {
         m_xspeed = -m_xspeed;
     }
-    if (m_y < -1.0 || m_y >= 1.0) {
+
+    double offset = ((double)Screen::SCREEN_WIDTH)/Screen::SCREEN_HEIGHT;
+    offset = (((double)Screen::SCREEN_WIDTH) - (double)Screen::SCREEN_HEIGHT)/Screen::SCREEN_WIDTH;
+    
+    if (m_y < -1.0 + R + offset || m_y >= 1.0 - R - offset) {
         m_yspeed = -m_yspeed;
     }
 

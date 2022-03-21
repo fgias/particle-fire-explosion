@@ -33,8 +33,6 @@ int main() {
         unsigned char blue = (1 + sin(elapsed * 0.0003)) * 128; 
 
         const Particle * const pParticles = swarm.getParticles();
-        
-        const double R = ((double)Particle::RADIUS)/Screen::SCREEN_WIDTH;
 
         for (int i=0; i<Swarm::N_PARTICLES; i++) {
             Particle particle = pParticles[i];

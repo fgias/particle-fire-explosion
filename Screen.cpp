@@ -12,7 +12,7 @@ bool Screen::init() {
     }
 
     m_window = SDL_CreateWindow(
-        "Particle Fire Explosion", 
+        "Bouncy Balls", 
         SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 
         SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN
     );

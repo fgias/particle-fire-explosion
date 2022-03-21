@@ -1,6 +1,8 @@
 #ifndef PARTICLE_H_
 #define PARTICLE_H_
 
+#include "Screen.h"
+
 namespace fgias {
 
 // the only difference between class and struct: 
@@ -18,6 +20,8 @@ public:
     Particle();
     void update();
 };
+
+const double R = ((double)Particle::RADIUS)/Screen::SCREEN_WIDTH;
 
 }
 
