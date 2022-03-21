@@ -6,6 +6,9 @@ namespace fgias {
 // the only difference between class and struct: 
 // instance vairables are public by default
 struct Particle { 
+
+    static const double RADIUS = 50;
+
     double m_x; // these are public
     double m_y;
 

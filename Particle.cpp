@@ -4,11 +4,11 @@
 namespace fgias {
 
 Particle::Particle() {
-    m_x = (2.0 * rand())/RAND_MAX - 1;
-    m_y = (2.0 * rand())/RAND_MAX - 1;
+    m_x = 0;
+    m_y = 0;
 
-    m_xspeed = (2.0 * rand()/RAND_MAX - 1) * 0.005;
-    m_yspeed = (2.0 * rand()/RAND_MAX - 1) * 0.005;
+    m_xspeed = (2.0 * rand()/RAND_MAX - 1) * 0.07;
+    m_yspeed = (2.0 * rand()/RAND_MAX - 1) * 0.07;
 }
 
 void Particle::update() {
