@@ -2,7 +2,7 @@
 
 namespace fgias {
 
-Swarm::Swarm(): N_PARTICLES(100) {
+Swarm::Swarm() {
     m_pParticles = new Particle[N_PARTICLES];
 }
 

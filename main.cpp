@@ -35,7 +35,7 @@ int main() {
         Particle * pParticles = swarm.getParticles();
         screen.m_screen_particles = pParticles;
 
-        for (int i=0; i<10; i++) {
+        for (int i=0; i<swarm.N_PARTICLES; i++) {
             Particle particle = pParticles[i];
             double R = ((double)Particle::RADIUS)/Screen::SCREEN_WIDTH;
             for (int row=-Particle::RADIUS; row<=Particle::RADIUS; row++) {

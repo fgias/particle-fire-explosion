@@ -7,7 +7,7 @@ namespace fgias {
 
 class Swarm {
 public:
-    int N_PARTICLES;
+    static const int N_PARTICLES = 10;
 private:
     Particle* m_pParticles; // const pointer to a particle
 public:

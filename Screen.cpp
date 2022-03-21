@@ -1,4 +1,6 @@
+#include <stdlib.h>
 #include "Screen.h"
+# include "Swarm.h"
 
 namespace fgias {
 
@@ -92,7 +94,8 @@ bool Screen::processEvents() {
         };
 
         if (event.type == SDL_MOUSEBUTTONDOWN) {
-            (m_screen_particles[5]).init();
+            int particle = ((double)rand())/RAND_MAX * Swarm::N_PARTICLES;
+            (m_screen_particles[particle]).init();
         };
     };
     return true;
