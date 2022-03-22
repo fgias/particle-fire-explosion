@@ -35,7 +35,7 @@ int main() {
         Particle * pParticles = swarm.getParticles();
         screen.m_screen_particles = pParticles;
 
-        for (int i=0; i<swarm.N_PARTICLES; i++) {
+        for (int i=0; i<swarm.N_PARTICLES_CURR; i++) {
             Particle particle = pParticles[i];
             double R = ((double)Particle::RADIUS)/Screen::SCREEN_WIDTH;
             for (int row=-Particle::RADIUS; row<=Particle::RADIUS; row++) {
@@ -76,6 +76,8 @@ int main() {
 /* 
 
 to run:
+
+clear;
 
 g++ ./src/main.cpp -Wall -g -c -I /opt/local/include/SDL2 -I ./include -D_THREAD_SAFE -o ./build/main.o;
 g++ ./src/Screen.cpp -Wall -g -c -I /opt/local/include/SDL2 -I ./include -D_THREAD_SAFE -o ./build/Screen.o; 

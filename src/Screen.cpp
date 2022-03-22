@@ -95,7 +95,7 @@ bool Screen::processEvents() {
         };
 
         if (event.type == SDL_MOUSEBUTTONDOWN) {
-            int particle = ((double)rand())/RAND_MAX * Swarm::N_PARTICLES;
+            int particle = Swarm::N_PARTICLES_CURR++;
 
             double w = (double)Screen::SCREEN_WIDTH;
             double h = (double)Screen::SCREEN_HEIGHT;
@@ -104,7 +104,7 @@ bool Screen::processEvents() {
 
             double Xcoord = ((double)xMouse)/w * 2 - 1.0;
             double Ycoord = ((double)yMouse)/h * 2 - 1.0;
-            (m_screen_particles[particle]).init(Xcoord, Ycoord);
+            (m_screen_particles[particle]).init(Xcoord, Ycoord); // new particle
         };
     };
     return true;

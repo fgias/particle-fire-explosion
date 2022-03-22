@@ -2,8 +2,10 @@
 
 namespace fgias {
 
+int Swarm::N_PARTICLES_CURR = 0;
+
 Swarm::Swarm() {
-    m_pParticles = new Particle[N_PARTICLES];
+    m_pParticles = new Particle[N_PARTICLES_MAX];
 }
 
 Swarm::~Swarm() {
@@ -11,7 +13,7 @@ Swarm::~Swarm() {
 }
 
 void Swarm::update() {
-    for (int i=0; i<N_PARTICLES; i++) {
+    for (int i=0; i<N_PARTICLES_CURR; i++) {
         m_pParticles[i].update();
     }
 }
