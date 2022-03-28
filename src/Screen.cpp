@@ -6,8 +6,8 @@
 namespace fgias {
 
 Screen::Screen(): 
-    m_screen_particles(NULL), time_click(0), m_window(NULL), m_renderer(NULL), 
-    m_texture(NULL), m_buffer(NULL) {
+    m_screen_particles(NULL), m_window(NULL), m_renderer(NULL), 
+    m_texture(NULL), m_buffer(NULL), time_click(0) {
 }
 
 bool Screen::init() {

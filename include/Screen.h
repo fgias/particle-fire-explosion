@@ -11,14 +11,14 @@ public:
     static const int SCREEN_WIDTH = 1200;
     static const int SCREEN_HEIGHT = 600;
     Particle* m_screen_particles;
-    int time_click;
-    double X_click;
-    double Y_click;
 private:
     SDL_Window * m_window; // convention: member variables: prefix with `m_`
     SDL_Renderer * m_renderer;
     SDL_Texture * m_texture;
     Uint32 * m_buffer;
+    int time_click;
+    double Y_click;
+    double X_click;
 
 public:
     Screen();
