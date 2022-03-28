@@ -6,7 +6,8 @@
 namespace fgias {
 
 Screen::Screen(): 
-    m_screen_particles(NULL), m_window(NULL), m_renderer(NULL), m_texture(NULL), m_buffer(NULL) {
+    m_screen_particles(NULL), time_click(0), m_window(NULL), m_renderer(NULL), 
+    m_texture(NULL), m_buffer(NULL) {
 }
 
 bool Screen::init() {
@@ -95,6 +96,20 @@ bool Screen::processEvents() {
         };
 
         if (event.type == SDL_MOUSEBUTTONDOWN) {
+            double w = (double)Screen::SCREEN_WIDTH;
+            double h = (double)Screen::SCREEN_HEIGHT;
+            double xMouse = (double)event.motion.x;
+            double yMouse = (double)event.motion.y;
+
+            double Xcoord = ((double)xMouse)/w * 2 - 1.0;
+            double Ycoord = ((double)yMouse)/h * 2 - 1.0;
+
+            time_click = SDL_GetTicks();
+            X_click = Xcoord;
+            Y_click = Ycoord;
+        };
+
+        if (event.type == SDL_MOUSEBUTTONUP) {
             int particle = Swarm::N_PARTICLES_CURR++;
 
             double w = (double)Screen::SCREEN_WIDTH;
@@ -104,8 +119,14 @@ bool Screen::processEvents() {
 
             double Xcoord = ((double)xMouse)/w * 2 - 1.0;
             double Ycoord = ((double)yMouse)/h * 2 - 1.0;
-            (m_screen_particles[particle]).init(Xcoord, Ycoord); // new particle
-        };
+
+            int now = SDL_GetTicks();
+            double vx = ((double)(Xcoord-X_click))/(now - time_click); // custom velocities
+            double vy = ((double)(Ycoord-Y_click))/(now - time_click);
+
+            (m_screen_particles[particle]).init(Xcoord, Ycoord, vx, vy); // new particle
+        }
+
     };
     return true;
 }

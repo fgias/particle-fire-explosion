@@ -16,12 +16,12 @@ void Particle::init() {
     m_yspeed = (2.0 * rand()/RAND_MAX - 1) * 0.01;
 }
 
-void Particle::init(double x, double y) {
+void Particle::init(double x, double y, double vx, double vy) {
     m_x = x;
     m_y = y;
 
-    m_xspeed = (2.0 * rand()/RAND_MAX - 1) * 0.01;
-    m_yspeed = (2.0 * rand()/RAND_MAX - 1) * 0.01;
+    m_xspeed = vx*10;
+    m_yspeed = vy*10;
 }
 
 void Particle::update() {
